@@ -1,26 +1,225 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Sarah's brand palette: Navy, Silver, Off-white */
+  --brand-navy: #1b2845;
+  --brand-navy-light: #2c3e5c;
+  --brand-silver: #a8adb8;
+  --brand-silver-light: #d4d8de;
+  --brand-off-white: #f9fafb;
+  --brand-off-white-muted: #f1f3f6;
+
+  --concept-primary: var(--brand-navy);
+  --concept-primary-foreground: #ffffff;
+  --concept-secondary: #4a5568;
+  --concept-accent: var(--brand-silver);
+  --concept-background: var(--brand-off-white);
+  --concept-foreground: var(--brand-navy);
+  --concept-muted: var(--brand-off-white-muted);
+  --concept-muted-foreground: #5c6370;
+  --concept-border: var(--brand-silver-light);
+  --concept-hero-gradient: linear-gradient(
+    135deg,
+    #1b2845 0%,
+    #2c3e5c 45%,
+    #3d526f 100%
+  );
+  --concept-font-heading: var(--font-playfair);
+  --concept-font-body: var(--font-inter);
+
+  /*
+   * Textile-inspired textures (subtle nods to fashion & fabric):
+   * linen slub, plain weave, twill, herringbone
+   */
+  --texture-linen: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+
+  --texture-weave-warp: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(168, 173, 184, 0.09) 2px,
+    rgba(168, 173, 184, 0.09) 3px
+  );
+
+  --texture-weave-weft: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(27, 40, 69, 0.045) 2px,
+    rgba(27, 40, 69, 0.045) 3px
+  );
+
+  --texture-twill: repeating-linear-gradient(
+    118deg,
+    transparent,
+    transparent 7px,
+    rgba(168, 173, 184, 0.07) 7px,
+    rgba(168, 173, 184, 0.07) 8px
+  );
+
+  --texture-herringbone-a: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 9px,
+    rgba(27, 40, 69, 0.035) 9px,
+    rgba(27, 40, 69, 0.035) 10px,
+    transparent 10px,
+    transparent 19px
+  );
+
+  --texture-herringbone-b: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 9px,
+    rgba(168, 173, 184, 0.05) 9px,
+    rgba(168, 173, 184, 0.05) 10px,
+    transparent 10px,
+    transparent 19px
+  );
+
+  --texture-twill-navy: repeating-linear-gradient(
+    118deg,
+    transparent,
+    transparent 8px,
+    rgba(212, 216, 222, 0.055) 8px,
+    rgba(212, 216, 222, 0.055) 9px
+  );
+
+  --texture-thread-grid: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 7px,
+      rgba(168, 173, 184, 0.06) 7px,
+      rgba(168, 173, 184, 0.06) 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 7px,
+      rgba(27, 40, 69, 0.04) 7px,
+      rgba(27, 40, 69, 0.04) 8px
+    );
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--concept-background);
+  --color-foreground: var(--concept-foreground);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--brand-off-white);
+  background-image:
+    var(--texture-linen),
+    var(--texture-weave-warp),
+    var(--texture-weave-weft),
+    radial-gradient(ellipse 90% 70% at 0% 0%, rgba(168, 173, 184, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 100% 100%, rgba(27, 40, 69, 0.05) 0%, transparent 50%),
+    linear-gradient(165deg, #fcfcfd 0%, #f4f6f8 45%, #eef1f5 100%);
+  background-size: 200px 200px, 4px 4px, 4px 4px, 100% 100%, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+  color: var(--concept-foreground);
+  font-family: var(--concept-font-body), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--concept-font-heading), Georgia, serif;
+}
+
+/* Linen canvas — plain weave on off-white */
+.texture-off-white {
+  background-color: var(--brand-off-white);
+  background-image:
+    var(--texture-linen),
+    var(--texture-weave-warp),
+    var(--texture-weave-weft),
+    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(212, 216, 222, 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(27, 40, 69, 0.03) 0%, transparent 55%),
+    linear-gradient(180deg, #fafbfc 0%, #f3f5f8 100%);
+  background-size: 200px 200px, 4px 4px, 4px 4px, 100% 100%, 100% 100%, 100% 100%;
+}
+
+/* Chambray / suiting — twill with cross weave */
+.texture-muted {
+  background-color: var(--brand-off-white-muted);
+  background-image:
+    var(--texture-linen),
+    var(--texture-twill),
+    var(--texture-weave-weft),
+    var(--texture-weave-warp),
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(212, 216, 222, 0.38) 0%, transparent 65%),
+    linear-gradient(180deg, #f2f4f7 0%, #e9edf2 100%);
+  background-size: 200px 200px, 16px 16px, 4px 4px, 4px 4px, 100% 100%, 100% 100%;
+}
+
+/* Fine wool suiting — twill on navy */
+.texture-navy {
+  color: #ffffff;
+  background-color: var(--brand-navy);
+  background-image:
+    var(--texture-linen),
+    var(--texture-twill-navy),
+    var(--texture-herringbone-a),
+    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(212, 216, 222, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(44, 62, 92, 0.75) 0%, transparent 55%),
+    linear-gradient(135deg, #1b2845 0%, #2c3e5c 45%, #3d526f 100%);
+  background-size: 200px 200px, 18px 18px, 28px 28px, 100% 100%, 100% 100%, 100% 100%;
+}
+
+/* Hero — linen with subtle herringbone & drape */
+.texture-hero {
+  background-color: var(--brand-off-white);
+  background-image:
+    var(--texture-linen),
+    var(--texture-herringbone-a),
+    var(--texture-herringbone-b),
+    var(--texture-weave-warp),
+    var(--texture-weave-weft),
+    radial-gradient(ellipse 65% 55% at 95% 5%, rgba(168, 173, 184, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 5% 95%, rgba(27, 40, 69, 0.05) 0%, transparent 55%),
+    linear-gradient(165deg, #fcfcfd 0%, #f4f6f8 50%, #eef1f5 100%);
+  background-size: 200px 200px, 28px 28px, 28px 28px, 4px 4px, 4px 4px, 100% 100%, 100% 100%, 100% 100%;
+}
+
+/* Pattern-maker thread grid — hero overlay */
+.texture-hero-mesh {
+  background-image: var(--texture-thread-grid);
+  background-size: 8px 8px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, black 15%, transparent 72%);
+  opacity: 0.7;
+}
+
+/* Silver accent divider — like a fine thread line */
+.silver-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--brand-silver) 20%,
+    var(--brand-silver-light) 50%,
+    var(--brand-silver) 80%,
+    transparent 100%
+  );
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
 }
