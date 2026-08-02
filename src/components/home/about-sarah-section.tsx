@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/button";
 const highlights = [
   {
     icon: Briefcase,
-    title: "30+ Years of Leadership",
+    title: "20+ Years of Leadership",
     description:
-      "Senior executive in luxury hospitality. SVP of Design. Decades of mentoring professionals and developing leaders.",
+      "Senior executive in luxury hospitality. SVP of Design. Mentoring professionals and developing leaders throughout her career.",
   },
   {
     icon: Users,

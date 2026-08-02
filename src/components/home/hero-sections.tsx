@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 
 const heroHighlights = [
   "Female Perspective Mentor",
-  "30+ Years of Experience",
+  "20+ Years of Experience",
   "One-on-One Coaching Only",
 ];
 

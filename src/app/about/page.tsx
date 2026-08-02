@@ -78,8 +78,8 @@ export default function AboutPage() {
           <FadeIn>
             <SectionHeader
               eyebrow="Background"
-              title="Three Decades of Leadership"
-              description="Sarah's coaching is grounded in decades of executive experience in luxury hospitality — not textbook theory."
+              title="Two Decades of Leadership"
+              description="Sarah's coaching is grounded in two decades of executive experience in luxury hospitality — not textbook theory."
             />
           </FadeIn>
 

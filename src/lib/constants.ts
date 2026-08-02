@@ -50,9 +50,8 @@ export const aboutSarah = {
   intro:
     "Life isn't about having all the answers — it's about learning, growing, and becoming the best version of yourself through experience.",
   paragraphs: [
-    "For more than 30 years, I've built a career around understanding people, leadership, personal style, confidence, and human connection. As a senior executive in the luxury hospitality industry, I've led teams, mentored professionals, developed leaders, and helped people discover strengths they didn't realize they had.",
+    "For more than 20 years, I've built a career around understanding people, leadership, personal style, confidence, and human connection. As a senior executive in the luxury hospitality industry, I've led teams, mentored professionals, developed leaders, and helped people discover strengths they didn't realize they had. I studied fashion and textiles for six years and built a career that ultimately led me to become Senior Vice President of Design for a luxury hospitality uniform manufacturer. Throughout my career, I've coached sales professionals, mentored emerging leaders, managed teams, and helped people navigate both professional and personal challenges.",
     "My journey has taken me around the world. Having traveled to more than 50 countries and grown up in Dubai, I've been fortunate to experience different cultures, perspectives, and ways of living. Those experiences taught me that regardless of where we come from, most people are searching for the same things: purpose, confidence, meaningful relationships, and a sense of belonging.",
-    "I studied fashion and textiles for six years and built a career that ultimately led me to become Senior Vice President of Design for a luxury hospitality uniform manufacturer. Throughout my career, I've coached sales professionals, mentored emerging leaders, managed teams, and helped people navigate both professional and personal challenges.",
     "Outside of work, I'm an adventurer at heart. Whether it's traveling, exploring the outdoors, or taking on new challenges, I've always believed growth happens when we step outside our comfort zones.",
     "I'm also a mother, and one of the things I'm most proud of is maintaining friendships that began when I was five years old. Those lifelong relationships have reinforced my belief that success means very little if you don't have meaningful connections and people you can count on.",
     "Today, I help men build confidence, strengthen relationships, improve communication, develop personal style, create better work-life balance, and gain clarity about where they want to go next in life.",
@@ -160,7 +159,7 @@ export const faqs = [
   {
     question: "What makes your coaching different?",
     answer:
-      "I'm a successful, experienced woman who offers a female perspective on confidence, relationships, communication, and modern life for men. My guidance is built on 30+ years of real-world leadership experience.",
+      "I'm a successful, experienced woman who offers a female perspective on confidence, relationships, communication, and modern life for men. My guidance is built on 20+ years of real-world leadership experience.",
   },
   {
     question: "What type of coaching do you offer?",
@@ -314,7 +313,7 @@ export const experience = [
       "One-on-one virtual coaching for men — confidence, relationships, communication, personal style, and purpose.",
   },
   {
-    year: "30+ Years",
+    year: "20+ Years",
     title: "Luxury Hospitality Executive",
     description:
       "Senior Vice President of Design for a luxury hospitality uniform manufacturer. Led teams, mentored professionals, and developed leaders.",
@@ -336,7 +335,7 @@ export const experience = [
 export const values = [
   {
     title: "Experience",
-    description: "Three decades of real-world leadership, not textbook theory.",
+    description: "Two decades of real-world leadership, not textbook theory.",
   },
   {
     title: "Honesty",
