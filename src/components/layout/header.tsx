@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { brandCopy, navLinks } from "@/lib/constants";
+import { brandCopy, bookingHref, navLinks } from "@/lib/constants";
 import { BrandLogo } from "@/components/layout/brand-logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -38,7 +38,7 @@ export function Header() {
 
         <div className="hidden lg:block">
           <Button asChild size="sm">
-            <Link href="/book">{brandCopy.primaryCta}</Link>
+            <Link href={bookingHref}>{brandCopy.primaryCta}</Link>
           </Button>
         </div>
 
@@ -75,7 +75,7 @@ export function Header() {
               </Link>
             ))}
             <Button asChild className="mt-2">
-              <Link href="/book" onClick={() => setMobileOpen(false)}>
+              <Link href={bookingHref} onClick={() => setMobileOpen(false)}>
                 {brandCopy.primaryCta}
               </Link>
             </Button>

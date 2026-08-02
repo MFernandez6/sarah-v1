@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CoachingDisclaimerBar } from "@/components/layout/coaching-disclaimer-bar";
 import { GoogleAnalytics } from "@/components/integrations/google-analytics";
+import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/lib/constants";
 
 const inter = Inter({
@@ -20,6 +21,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.shortName}`,
@@ -33,8 +35,10 @@ export const metadata: Metadata = {
     "relationship coaching",
     "Sarah Angelo",
     "South Florida coaching",
+    "personal development coach Florida",
   ],
-  authors: [{ name: siteConfig.shortName }],
+  authors: [{ name: siteConfig.founder }],
+  creator: siteConfig.founder,
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -42,15 +46,27 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: "/images/logo-full.png",
+        width: 1024,
+        height: 819,
+        alt: "The Better Man Project brand lockup",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
+    images: ["/images/logo-full.png"],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
@@ -65,6 +81,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <JsonLd />
         <Header />
         <main className="flex-1">{children}</main>
         <CoachingDisclaimerBar />

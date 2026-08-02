@@ -34,7 +34,10 @@ export default function ServicesPage() {
                     style={{ background: "var(--concept-hero-gradient)" }}
                   />
                   <CardHeader>
-                    <CardTitle className="font-[family-name:var(--concept-font-heading)] text-2xl">
+                    <CardTitle
+                      as="h2"
+                      className="font-[family-name:var(--concept-font-heading)] text-2xl"
+                    >
                       {service.title}
                     </CardTitle>
                   </CardHeader>
@@ -121,7 +124,7 @@ export default function ServicesPage() {
 
           <FadeIn className="mt-12 text-center">
             <Button asChild size="lg">
-              <Link href="/book">
+              <Link href="/book#schedule">
                 Book Your Free Discovery Call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

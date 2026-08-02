@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { Container, Section } from "@/components/layout/section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { brandCopy } from "@/lib/constants";
+import { brandCopy, bookingHref } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Testimonials",
@@ -28,7 +28,7 @@ export default function TestimonialsPage() {
               to learn how coaching can help you.
             </p>
             <Button asChild size="lg" className="mt-8">
-              <Link href="/book">{brandCopy.primaryCta}</Link>
+              <Link href={bookingHref}>{brandCopy.primaryCta}</Link>
             </Button>
           </FadeIn>
         </Container>

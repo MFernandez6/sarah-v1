@@ -110,7 +110,7 @@ export default function ContactPage() {
             <FadeIn delay={0.2}>
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-lg font-semibold">Contact Information</h3>
+                  <h2 className="text-lg font-semibold">Contact Information</h2>
                   <ul className="mt-4 space-y-4">
                     <li className="flex items-center gap-3 text-[var(--concept-muted-foreground)]">
                       <Mail className="h-5 w-5 text-[var(--concept-primary)]" />
@@ -133,7 +133,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold">Follow Sarah</h3>
+                  <h2 className="text-lg font-semibold">Follow Sarah</h2>
                   <div className="mt-4">
                     <SocialLinks />
                   </div>
@@ -143,9 +143,9 @@ export default function ContactPage() {
                   className="rounded-xl p-8 text-white"
                   style={{ background: "var(--concept-hero-gradient)" }}
                 >
-                  <h3 className="font-[family-name:var(--concept-font-heading)] text-xl font-bold">
+                  <h2 className="font-[family-name:var(--concept-font-heading)] text-xl font-bold">
                     Prefer to Talk?
-                  </h3>
+                  </h2>
                   <p className="mt-2 text-sm text-white/90">
                     Book a free 30-minute discovery call and let&apos;s discuss your
                     goals in person.
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     asChild
                     className="mt-4 bg-white text-[var(--concept-primary)] hover:bg-white/90"
                   >
-                    <a href="/book">Book a Free Call</a>
+                    <a href="/book#schedule">Book a Free Call</a>
                   </Button>
                 </div>
               </div>

@@ -19,7 +19,7 @@ export function Footer() {
               {brandCopy.subheadline}
             </p>
             <p className="mt-2 text-xs text-[var(--concept-muted-foreground)]">
-              Founded by {siteConfig.legalName}
+              {siteConfig.legalName}
             </p>
             <div className="mt-4">
               <SocialLinks />
@@ -27,9 +27,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
+            <p className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
               Navigation
-            </h3>
+            </p>
             <ul className="mt-4 space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -45,9 +45,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
+            <p className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
               Legal
-            </h3>
+            </p>
             <ul className="mt-4 space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.href}>
@@ -63,9 +63,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
+            <p className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
               Contact
-            </h3>
+            </p>
             <ul className="mt-4 space-y-2 text-sm text-[var(--concept-muted-foreground)]">
               <li>
                 <a
@@ -86,9 +86,9 @@ export function Footer() {
               <li>{siteConfig.location}</li>
             </ul>
             <div className="mt-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
+              <p className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
                 Newsletter
-              </h3>
+              </p>
               <div className="mt-4">
                 <NewsletterSignup compact />
               </div>

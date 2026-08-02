@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { brandCopy } from "@/lib/constants";
+import { brandCopy, bookingHref } from "@/lib/constants";
 import { Container, Section } from "@/components/layout/section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
@@ -33,7 +33,7 @@ export function CTASection() {
                   size="lg"
                   className="bg-white text-[var(--concept-primary)] hover:bg-[var(--brand-off-white)]"
                 >
-                  <Link href="/book">{brandCopy.primaryCta}</Link>
+                  <Link href={bookingHref}>{brandCopy.primaryCta}</Link>
                 </Button>
                 <Button
                   asChild

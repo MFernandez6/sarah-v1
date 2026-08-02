@@ -8,6 +8,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { aboutSarah, experience, siteConfig, values } from "@/lib/constants";
+import { imageAlts } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About",
@@ -47,7 +48,7 @@ export default function AboutPage() {
               <div className="relative aspect-[5/4] overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="/images/logo-full.png"
-                  alt="The Better Man Project"
+                  alt={imageAlts.founderPortrait}
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -217,7 +218,7 @@ export default function AboutPage() {
 
           <FadeIn className="mt-12 text-center">
             <Button asChild size="lg">
-              <Link href="/book">
+              <Link href="/book#schedule">
                 Book a Free Discovery Call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

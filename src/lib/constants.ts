@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "The Better Man Project",
-  legalName: "Sarah Angelo Inc",
+  legalName: "The Better Man Project LLC",
   shortName: "The Better Man Project",
   founder: "Sarah Angelo",
   title: "The Better Man Project | Guidance for Modern Men",
@@ -22,6 +22,8 @@ export const brandCopy = {
   primaryCta: "Book a Free Discovery Call",
   secondaryCta: "Read My Story",
 };
+
+export const bookingHref = "/book#schedule";
 
 export const navLinks = [
   { href: "/", label: "Home" },
@@ -183,62 +185,7 @@ export const faqs = [
   },
 ];
 
-export const blogPosts = [
-  {
-    slug: "building-confidence-at-work",
-    title: "5 Ways to Build Confidence at Work Without Faking It",
-    excerpt:
-      "Authentic confidence comes from preparation, self-awareness, and consistent action — not bravado.",
-    category: "Confidence",
-    date: "May 15, 2026",
-    readTime: "6 min read",
-  },
-  {
-    slug: "communication-in-relationships",
-    title: "The Communication Shift That Strengthens Every Relationship",
-    excerpt:
-      "Most men weren't taught how to communicate under pressure. Here's a framework that actually works.",
-    category: "Relationships",
-    date: "May 8, 2026",
-    readTime: "8 min read",
-  },
-  {
-    slug: "work-life-boundaries",
-    title: "Why High Performers Struggle With Boundaries — And How to Fix It",
-    excerpt:
-      "Success without burnout isn't about working less. It's about working with intention.",
-    category: "Work-Life Balance",
-    date: "April 28, 2026",
-    readTime: "5 min read",
-  },
-  {
-    slug: "finding-purpose",
-    title: "Finding Purpose When You're Already Successful",
-    excerpt:
-      "When you've checked all the boxes but still feel something's missing, this is where to start.",
-    category: "Purpose",
-    date: "April 12, 2026",
-    readTime: "7 min read",
-  },
-  {
-    slug: "personal-style-matters",
-    title: "Why Personal Style Matters More Than You Think",
-    excerpt:
-      "Your image communicates before you say a word. Learn how to align your presence with your goals.",
-    category: "Style",
-    date: "March 30, 2026",
-    readTime: "4 min read",
-  },
-  {
-    slug: "accountability-coaching",
-    title: "The Power of Having Someone in Your Corner",
-    excerpt:
-      "Accountability isn't about pressure — it's about having a trusted advisor who keeps you honest.",
-    category: "Coaching",
-    date: "March 18, 2026",
-    readTime: "6 min read",
-  },
-];
+export { blogPosts } from "@/lib/blog-posts";
 
 export const pricingPlans = [
   {
@@ -253,13 +200,15 @@ export const pricingPlans = [
       "Coaching approach overview",
       "No obligation",
     ],
-    cta: "Request a Call",
+    cta: "Schedule Now",
+    href: "#schedule",
     highlighted: false,
+    badge: "Start Here",
   },
   {
     name: "Single Coaching Session",
-    price: "Contact for Pricing",
-    period: "per session",
+    price: "$150–$200",
+    period: "per 60-min session",
     description:
       "A focused one-on-one session to tackle a specific challenge or goal with actionable takeaways.",
     features: [
@@ -268,31 +217,35 @@ export const pricingPlans = [
       "Follow-up resources",
       "Email support",
     ],
-    cta: "Get in Touch",
+    cta: "Start with a Discovery Call",
+    href: "#schedule",
     highlighted: false,
   },
   {
     name: "Monthly Coaching Package",
-    price: "Contact for Pricing",
+    price: "$600–$900",
     period: "per month",
     description:
-      "Ongoing one-on-one support for sustained growth and accountability.",
+      "Ongoing one-on-one support for sustained growth and accountability — typically four sessions plus check-ins.",
     features: [
-      "Regular virtual sessions",
+      "About 4 sessions per month",
       "Weekly check-ins",
       "Priority email support",
       "Custom growth roadmap",
       "Progress tracking",
     ],
-    cta: "Get Started",
+    cta: "Start with a Discovery Call",
+    href: "#schedule",
     highlighted: true,
+    badge: "Most Popular",
   },
   {
     name: "Extended Coaching Package",
-    price: "Contact for Pricing",
-    period: "custom",
+    price: "$1,500–$2,500+",
+    period: "per month",
+    priceNote: "Or from $3,000 for a 3-month engagement",
     description:
-      "A tailored coaching engagement for men who want intensive, high-touch support.",
+      "Intensive, high-touch coaching across confidence, relationships, style, and strategy.",
     features: [
       "Flexible session schedule",
       "Ongoing messaging support",
@@ -300,7 +253,8 @@ export const pricingPlans = [
       "Relationship & communication focus",
       "Personalized strategy reviews",
     ],
-    cta: "Let's Talk",
+    cta: "Start with a Discovery Call",
+    href: "#schedule",
     highlighted: false,
   },
 ];

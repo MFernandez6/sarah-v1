@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Briefcase, Users, Globe } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
+import { imageAlts } from "@/lib/seo";
 import { Container, Section, SectionHeader } from "@/components/layout/section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
@@ -38,7 +39,7 @@ export function AboutSarahSection() {
               <div className="relative aspect-square overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src="/images/logo.png"
-                  alt={siteConfig.founder}
+                  alt={imageAlts.founderPortrait}
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 50vw"

@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { brandCopy, siteConfig } from "@/lib/constants";
+import { imageAlts } from "@/lib/seo";
+import { brandCopy, bookingHref, siteConfig } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -52,7 +53,7 @@ export function HeroSection() {
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Button asChild size="lg">
-              <Link href="/book">
+              <Link href={bookingHref}>
                 {brandCopy.primaryCta}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -84,7 +85,7 @@ export function HeroSection() {
           <div className="relative aspect-[5/4] overflow-hidden rounded-2xl shadow-2xl">
             <Image
               src="/images/logo-full.png"
-              alt="The Better Man Project — Guidance for Modern Men"
+              alt={imageAlts.logoFull}
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
