@@ -8,8 +8,8 @@ export const siteConfig = {
     "Personal development coaching for men — not therapy or mental health treatment. A female perspective on confidence, relationships, and communication from Sarah Angelo.",
   tagline: "Guidance for Modern Men",
   motto: "Be better. Live better. Lead better.",
-  url: "https://thebettermanproject.com",
-  email: "SarahAngeloinc@gmail.com",
+  url: "https://thebettermanproject.live",
+  email: "sarah@thebettermanproject.live",
   phone: "954.471.2165",
   location: "Serving South Florida · Virtual Sessions Worldwide",
 };
@@ -306,8 +306,24 @@ export const values = [
 ];
 
 export const socialLinks = [
-  { platform: "Instagram", href: "https://instagram.com", icon: "Instagram" },
-  { platform: "LinkedIn", href: "https://linkedin.com", icon: "Linkedin" },
-  { platform: "TikTok", href: "https://tiktok.com", icon: "Tiktok" },
-  { platform: "X", href: "https://x.com", icon: "X" },
+  {
+    platform: "Instagram",
+    href: "https://www.instagram.com/__thebettermanproject/",
+    icon: "Instagram",
+  },
+  {
+    platform: "LinkedIn",
+    href: "https://www.linkedin.com/in/thebettermanprj/",
+    icon: "Linkedin",
+  },
+  {
+    platform: "TikTok",
+    href: "https://www.tiktok.com/@thebettermanprj",
+    icon: "Tiktok",
+  },
+  {
+    platform: "X",
+    href: "https://x.com/thebettermanprj",
+    icon: "X",
+  },
 ];

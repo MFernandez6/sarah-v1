@@ -12,8 +12,8 @@ export function Footer() {
   return (
     <footer className="texture-muted border-t border-[var(--brand-silver-light)]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
             <BrandLogo />
             <p className="mt-3 text-sm leading-relaxed text-[var(--concept-muted-foreground)]">
               {brandCopy.subheadline}
@@ -26,7 +26,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="lg:col-span-2">
             <p className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
               Navigation
             </p>
@@ -44,7 +44,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="lg:col-span-2">
             <p className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
               Legal
             </p>
@@ -62,7 +62,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="lg:col-span-3">
             <p className="text-sm font-semibold uppercase tracking-wider text-[var(--concept-foreground)]">
               Contact
             </p>
@@ -70,7 +70,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="break-all transition-colors hover:text-[var(--concept-primary)]"
+                  className="inline-block max-w-full whitespace-nowrap transition-colors hover:text-[var(--concept-primary)]"
                 >
                   {siteConfig.email}
                 </a>

@@ -5,7 +5,7 @@ A checklist of items only you can complete (accounts, photos, decisions). Once y
 **Business:** The Better Man Project LLC (name may still change)  
 **Founder:** Sarah Angelo  
 **Phone:** 954.471.2165  
-**Current email:** SarahAngeloinc@gmail.com  
+**Current email:** sarah@thebettermanproject.live  
 
 ---
 
@@ -74,24 +74,14 @@ Recommended start:
 
 ---
 
-### 5. Professional email (optional but recommended)
-You’re currently using Gmail. A branded address looks more established.
-
-**Examples**
-- `hello@thebettermanproject.com`
-- `sarah@thebettermanproject.com`
-
-**What to decide**
-- Preferred domain (e.g. `thebettermanproject.com`)
-- Preferred inbox address  
-Miguel can update the site contact email once it’s set up (Google Workspace, Microsoft 365, or your domain host).
+### 5. Professional email
+**Done.** Site contact email is `sarah@thebettermanproject.live`.
 
 ---
 
-### 6. Domain & hosting for the live website
-**What to decide / provide**
-- Preferred domain name (if not already purchased)
-- Who will manage hosting / DNS (Miguel can advise)
+### 6. Domain & hosting
+**Domain is live:** `thebettermanproject.live`  
+Hosting / DNS still to confirm with Miguel if not already pointed at the site.
 
 ---
 
@@ -185,8 +175,8 @@ Copy this when emailing or texting updates:
 - [ ] Instagram URL  
 - [ ] LinkedIn URL  
 - [ ] (Optional) TikTok / X URLs  
-- [ ] Preferred website domain  
-- [ ] Preferred contact email  
+- [x] Website domain — thebettermanproject.live  
+- [x] Contact email — sarah@thebettermanproject.live  
 - [ ] Package pricing (when decided) — site currently shows starting ranges; confirm or adjust with Miguel  
 - [ ] Attorney sign-off on disclaimer (when done)  
 
@@ -208,6 +198,7 @@ You don’t need to redo these — they’re built:
 - Brand name, taglines, and About story (20+ years; fashion/textiles merged into bio)  
 - Navy / silver / off-white design + textile-inspired backgrounds  
 - Pages: Home, About, Services, Blog, Book, Contact, Legal  
+- Live domain + Workspace email (`thebettermanproject.live` / `sarah@thebettermanproject.live`)  
 - Coaching disclaimer (not therapy / not clinical)  
 - Booking page ready for your scheduling link  
 - Social icon spots ready for live URLs  
