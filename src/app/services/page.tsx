@@ -123,7 +123,7 @@ export default function ServicesPage() {
           </StaggerContainer>
 
           <FadeIn className="mt-12 text-center">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link href="/book#schedule">
                 Book Your Free Discovery Call
                 <ArrowRight className="ml-2 h-4 w-4" />

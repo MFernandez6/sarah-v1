@@ -17,7 +17,7 @@ export function BrandLogo({
   imageClassName,
 }: BrandLogoProps) {
   return (
-    <Link href="/" className={cn("flex items-center gap-3", className)}>
+    <Link href="/" className={cn("flex min-w-0 items-center gap-2 sm:gap-3", className)}>
       <Image
         src="/images/logo.png"
         alt={imageAlts.brandLogoNav}

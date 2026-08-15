@@ -109,6 +109,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -121,9 +124,28 @@ body {
     radial-gradient(ellipse 80% 60% at 100% 100%, rgba(27, 40, 69, 0.05) 0%, transparent 50%),
     linear-gradient(165deg, #fcfcfd 0%, #f4f6f8 45%, #eef1f5 100%);
   background-size: 200px 200px, 4px 4px, 4px 4px, 100% 100%, 100% 100%, 100% 100%;
-  background-attachment: fixed;
+  background-attachment: scroll;
   color: var(--concept-foreground);
   font-family: var(--concept-font-body), system-ui, sans-serif;
+  overflow-x: clip;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-attachment: fixed;
+  }
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+iframe {
+  display: block;
 }
 
 h1, h2, h3, h4, h5, h6 {

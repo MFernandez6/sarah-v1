@@ -70,7 +70,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="transition-colors hover:text-[var(--concept-primary)]"
+                  className="break-all transition-colors hover:text-[var(--concept-primary)]"
                 >
                   {siteConfig.email}
                 </a>

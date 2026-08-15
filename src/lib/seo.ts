@@ -1,18 +1,24 @@
 import { socialLinks, siteConfig } from "@/lib/constants";
 
+export const founderPortrait = {
+  src: "/images/sarah-angelo.jpg",
+  width: 543,
+  height: 1024,
+  /** Square crop for Gmail / Google Workspace / circular avatars */
+  profileSrc: "/images/sarah-angelo-profile.jpg",
+  profileSize: 800,
+} as const;
+
 /**
  * Centralized image alt text for accessibility and SEO.
- * When photography arrives, update founderPortrait with a true description
- * (e.g. "Sarah Angelo, founder of The Better Man Project, smiling in a navy blazer").
  */
 export const imageAlts = {
   logoMark:
     "The Better Man Project logo: a gold compass rose emblem on a navy background",
   logoFull:
     "The Better Man Project brand lockup — gold compass logo above the name and tagline Guidance for Modern Men on a navy textured background",
-  /** Replace this string when Sarah’s headshot is uploaded */
   founderPortrait:
-    "Placeholder for Sarah Angelo professional headshot — currently showing The Better Man Project compass logo",
+    "Sarah Angelo, founder of The Better Man Project, in a white blazer with a warm, confident smile",
   brandLogoNav: "The Better Man Project",
 } as const;
 
@@ -89,6 +95,7 @@ export function buildJsonLdGraph() {
         description:
           "Founder of The Better Man Project. Female perspective mentor for men focused on confidence, relationships, communication, and personal style. Based in South Florida; virtual coaching worldwide.",
         url: `${siteConfig.url}/about`,
+        image: `${siteConfig.url}${founderPortrait.profileSrc}`,
         worksFor: { "@id": orgId },
         knowsAbout: [
           "Personal development coaching",

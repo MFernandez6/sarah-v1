@@ -20,7 +20,7 @@ export function Section({ children, className, id, variant = "default" }: Sectio
   return (
     <section
       id={id}
-      className={cn("py-16 sm:py-20 lg:py-24", variantClasses[variant], className)}
+      className={cn("py-12 sm:py-16 lg:py-24", variantClasses[variant], className)}
     >
       {children}
     </section>
@@ -55,7 +55,7 @@ export function SectionHeader({
           {eyebrow}
         </p>
       )}
-      <h2 className="font-[family-name:var(--concept-font-heading)] text-3xl font-bold tracking-tight text-[var(--concept-foreground)] sm:text-4xl">
+      <h2 className="font-[family-name:var(--concept-font-heading)] text-2xl font-bold tracking-tight text-[var(--concept-foreground)] sm:text-3xl lg:text-4xl">
         {title}
       </h2>
       <div className={cn("silver-rule mt-4", align === "center" ? "mx-auto w-24" : "w-24")} />

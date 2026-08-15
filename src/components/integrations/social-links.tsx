@@ -57,7 +57,7 @@ export function SocialLinks({ className }: SocialLinksProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Follow on ${link.platform}`}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--concept-border)] text-[var(--concept-muted-foreground)] transition-all hover:border-[var(--concept-primary)] hover:text-[var(--concept-primary)]"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--concept-border)] text-[var(--concept-muted-foreground)] transition-all hover:border-[var(--concept-primary)] hover:text-[var(--concept-primary)]"
           >
             <Icon className="h-4 w-4" />
           </Link>

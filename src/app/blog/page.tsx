@@ -36,7 +36,7 @@ export default function BlogPage() {
                   category={featured.category}
                   className="min-h-[240px] lg:min-h-full"
                 />
-                <CardContent className="flex flex-col justify-center p-8 lg:p-12">
+                <CardContent className="flex flex-col justify-center p-6 sm:p-8 lg:p-12">
                   <Badge className="w-fit">{featured.category}</Badge>
                   <h2 className="mt-4 font-[family-name:var(--concept-font-heading)] text-2xl font-bold sm:text-3xl">
                     {featured.title}

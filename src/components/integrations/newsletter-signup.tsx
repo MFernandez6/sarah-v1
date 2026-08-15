@@ -42,7 +42,7 @@ export function NewsletterSignup({ compact = false }: NewsletterSignupProps) {
           aria-label="Email address for newsletter"
         />
       </div>
-      <Button type="submit" size={compact ? "sm" : "default"}>
+      <Button type="submit" size={compact ? "sm" : "default"} className="w-full sm:w-auto">
         Subscribe
       </Button>
     </form>

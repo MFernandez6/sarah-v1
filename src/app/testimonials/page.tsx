@@ -27,7 +27,7 @@ export default function TestimonialsPage() {
               Testimonials are coming soon. In the meantime, book a free discovery call
               to learn how coaching can help you.
             </p>
-            <Button asChild size="lg" className="mt-8">
+            <Button asChild size="lg" className="mt-8 w-full sm:w-auto">
               <Link href={bookingHref}>{brandCopy.primaryCta}</Link>
             </Button>
           </FadeIn>

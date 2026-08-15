@@ -29,7 +29,7 @@ export function FadeIn({
       viewport={{ once: true, margin: "-50px" }}
       variants={fadeUp}
       transition={{ duration, delay, ease: "easeOut" }}
-      className={cn(className)}
+      className={cn("min-w-0", className)}
     >
       {children}
     </motion.div>
@@ -73,7 +73,7 @@ export function StaggerItem({
   className?: string;
 }) {
   return (
-    <motion.div variants={fadeUp} transition={{ duration: 0.5 }} className={className}>
+    <motion.div variants={fadeUp} transition={{ duration: 0.5 }} className={cn("min-w-0", className)}>
       {children}
     </motion.div>
   );

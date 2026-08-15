@@ -17,7 +17,7 @@ export function WhoIHelpSection() {
         <StaggerContainer className="grid gap-6 md:grid-cols-2">
           {whoIHelp.map((item, index) => (
             <StaggerItem key={item.title}>
-              <div className="group relative overflow-hidden rounded-xl border border-[var(--brand-silver-light)] bg-[var(--brand-off-white)]/60 p-8 backdrop-blur-sm transition-all hover:border-[var(--brand-silver)] hover:shadow-lg">
+              <div className="group relative overflow-hidden rounded-xl border border-[var(--brand-silver-light)] bg-[var(--brand-off-white)]/60 p-6 backdrop-blur-sm transition-all hover:border-[var(--brand-silver)] hover:shadow-lg sm:p-8">
                 <span className="font-[family-name:var(--concept-font-heading)] text-5xl font-bold text-[var(--concept-primary)]/10">
                   {String(index + 1).padStart(2, "0")}
                 </span>

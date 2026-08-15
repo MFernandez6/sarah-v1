@@ -1,11 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Briefcase, Users, Globe } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
-import { imageAlts } from "@/lib/seo";
 import { Container, Section, SectionHeader } from "@/components/layout/section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
+import { FounderPortrait } from "@/components/media/founder-portrait";
 
 const highlights = [
   {
@@ -34,18 +33,7 @@ export function AboutSarahSection() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <FadeIn>
-            <div className="relative">
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[var(--brand-silver-light)] to-[var(--brand-navy)] opacity-40" />
-              <div className="relative aspect-square overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="/images/logo.png"
-                  alt={imageAlts.founderPortrait}
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </div>
+            <FounderPortrait />
           </FadeIn>
 
           <FadeIn delay={0.2}>

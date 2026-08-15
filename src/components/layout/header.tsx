@@ -16,8 +16,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--brand-silver-light)] bg-[var(--brand-off-white)]/90 backdrop-blur-lg texture-off-white">
       <div className="silver-rule" />
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <BrandLogo />
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        <BrandLogo className="min-w-0" />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
           {navLinks.map((link) => (
@@ -44,7 +44,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-[var(--concept-foreground)] lg:hidden"
+          className="inline-flex h-11 w-11 min-h-11 min-w-11 items-center justify-center rounded-md text-[var(--concept-foreground)] lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Briefcase, Heart, Globe, Award } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { Container, Section, SectionHeader } from "@/components/layout/section";
@@ -8,12 +7,23 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { aboutSarah, experience, siteConfig, values } from "@/lib/constants";
-import { imageAlts } from "@/lib/seo";
+import { founderPortrait, imageAlts } from "@/lib/seo";
+import { FounderPortrait } from "@/components/media/founder-portrait";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about Sarah Angelo — luxury hospitality executive, female perspective mentor, and founder of The Better Man Project.",
+  openGraph: {
+    images: [
+      {
+        url: founderPortrait.src,
+        width: founderPortrait.width,
+        height: founderPortrait.height,
+        alt: imageAlts.founderPortrait,
+      },
+    ],
+  },
 };
 
 export default function AboutPage() {
@@ -26,8 +36,14 @@ export default function AboutPage() {
 
       <Section>
         <Container>
-          <div className="grid items-start gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-            <FadeIn>
+          <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
+            <div className="lg:sticky lg:top-28">
+              <FadeIn>
+                <FounderPortrait />
+              </FadeIn>
+            </div>
+
+            <FadeIn delay={0.15}>
               <SectionHeader
                 eyebrow="Sarah's Story"
                 title="Built on Real-World Experience"
@@ -41,18 +57,6 @@ export default function AboutPage() {
                 {aboutSarah.paragraphs.slice(0, 4).map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <div className="relative aspect-[5/4] overflow-hidden rounded-2xl shadow-xl">
-                <Image
-                  src="/images/logo-full.png"
-                  alt={imageAlts.founderPortrait}
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
               </div>
             </FadeIn>
           </div>
@@ -217,7 +221,7 @@ export default function AboutPage() {
           </div>
 
           <FadeIn className="mt-12 text-center">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link href="/book#schedule">
                 Book a Free Discovery Call
                 <ArrowRight className="ml-2 h-4 w-4" />

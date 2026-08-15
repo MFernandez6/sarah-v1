@@ -26,7 +26,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-[var(--brand-navy)]/8 blur-3xl" aria-hidden="true" />
       <div className="pointer-events-none absolute right-1/4 top-1/3 h-48 w-48 rounded-full border border-[var(--brand-silver-light)]/20" aria-hidden="true" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:py-28">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:gap-12 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:py-28">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -38,10 +38,10 @@ export function HeroSection() {
           >
             {siteConfig.tagline}
           </Badge>
-          <h1 className="font-[family-name:var(--concept-font-heading)] text-4xl font-bold leading-tight tracking-tight text-[var(--concept-foreground)] sm:text-5xl lg:text-6xl">
+          <h1 className="font-[family-name:var(--concept-font-heading)] text-[1.75rem] font-bold leading-tight tracking-tight text-[var(--concept-foreground)] sm:text-5xl lg:text-6xl">
             {brandCopy.headline}
           </h1>
-          <p className="mt-2 text-sm font-semibold uppercase tracking-[0.25em] text-[var(--brand-silver)]">
+          <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand-silver)] sm:text-sm sm:tracking-[0.25em]">
             {brandCopy.pillars}
           </p>
           <div className="silver-rule my-6 w-20" />
@@ -51,14 +51,14 @@ export function HeroSection() {
           <p className="mt-3 text-sm italic text-[var(--concept-muted-foreground)]">
             {siteConfig.motto}
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Button asChild size="lg">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link href={bookingHref}>
                 {brandCopy.primaryCta}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
               <Link href="/about">{brandCopy.secondaryCta}</Link>
             </Button>
           </div>
@@ -79,18 +79,23 @@ export function HeroSection() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative"
+          className="relative mx-auto w-full max-w-xl overflow-x-clip pb-2 pr-2 sm:pb-3 sm:pr-3 lg:max-w-none"
         >
-          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[var(--brand-silver-light)] via-[var(--brand-silver)] to-[var(--brand-navy)] opacity-60" />
-          <div className="relative aspect-[5/4] overflow-hidden rounded-2xl shadow-2xl">
-            <Image
-              src="/images/logo-full.png"
-              alt={imageAlts.logoFull}
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
+          <div
+            className="absolute -bottom-1 -right-1 left-5 top-6 rounded-2xl bg-[var(--brand-navy)]"
+            aria-hidden="true"
+          />
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-1 ring-[var(--brand-silver)]/50">
+            <div className="relative aspect-[5/4]">
+              <Image
+                src="/images/logo-full.png"
+                alt={imageAlts.logoFull}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
           </div>
         </motion.div>
       </div>

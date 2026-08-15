@@ -112,22 +112,22 @@ export default function ContactPage() {
                 <div>
                   <h2 className="text-lg font-semibold">Contact Information</h2>
                   <ul className="mt-4 space-y-4">
-                    <li className="flex items-center gap-3 text-[var(--concept-muted-foreground)]">
-                      <Mail className="h-5 w-5 text-[var(--concept-primary)]" />
+                    <li className="flex items-start gap-3 text-[var(--concept-muted-foreground)]">
+                      <Mail className="mt-0.5 h-5 w-5 shrink-0 text-[var(--concept-primary)]" />
                       <a
                         href={`mailto:${siteConfig.email}`}
-                        className="hover:text-[var(--concept-primary)]"
+                        className="break-all hover:text-[var(--concept-primary)]"
                       >
                         {siteConfig.email}
                       </a>
                     </li>
-                    <li className="flex items-center gap-3 text-[var(--concept-muted-foreground)]">
-                      <Phone className="h-5 w-5 text-[var(--concept-primary)]" />
+                    <li className="flex items-start gap-3 text-[var(--concept-muted-foreground)]">
+                      <Phone className="mt-0.5 h-5 w-5 shrink-0 text-[var(--concept-primary)]" />
                       {siteConfig.phone}
                     </li>
-                    <li className="flex items-center gap-3 text-[var(--concept-muted-foreground)]">
-                      <MapPin className="h-5 w-5 text-[var(--concept-primary)]" />
-                      {siteConfig.location}
+                    <li className="flex items-start gap-3 text-[var(--concept-muted-foreground)]">
+                      <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[var(--concept-primary)]" />
+                      <span className="min-w-0">{siteConfig.location}</span>
                     </li>
                   </ul>
                 </div>
@@ -140,7 +140,7 @@ export default function ContactPage() {
                 </div>
 
                 <div
-                  className="rounded-xl p-8 text-white"
+                  className="rounded-xl p-6 text-white sm:p-8"
                   style={{ background: "var(--concept-hero-gradient)" }}
                 >
                   <h2 className="font-[family-name:var(--concept-font-heading)] text-xl font-bold">
@@ -152,7 +152,7 @@ export default function ContactPage() {
                   </p>
                   <Button
                     asChild
-                    className="mt-4 bg-white text-[var(--concept-primary)] hover:bg-white/90"
+                    className="mt-4 w-full bg-white text-[var(--concept-primary)] hover:bg-white/90 sm:w-auto"
                   >
                     <a href="/book#schedule">Book a Free Call</a>
                   </Button>

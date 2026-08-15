@@ -9,7 +9,7 @@ export function CTASection() {
     <Section>
       <Container>
         <FadeIn>
-          <div className="relative overflow-hidden rounded-2xl px-8 py-16 text-center sm:px-12 texture-navy">
+          <div className="relative overflow-hidden rounded-2xl px-5 py-10 text-center sm:px-12 sm:py-16 texture-navy">
             <div
               className="pointer-events-none absolute inset-0 opacity-40"
               style={{
@@ -19,7 +19,7 @@ export function CTASection() {
               aria-hidden="true"
             />
             <div className="relative">
-              <h2 className="font-[family-name:var(--concept-font-heading)] text-3xl font-bold text-white sm:text-4xl">
+              <h2 className="font-[family-name:var(--concept-font-heading)] text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
                 Ready to Take the Next Step?
               </h2>
               <div className="silver-rule mx-auto my-6 w-24 opacity-60" />
@@ -27,11 +27,11 @@ export function CTASection() {
                 Book a free discovery call and let&apos;s discuss your goals,
                 challenges, and how coaching can help you move forward.
               </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-white text-[var(--concept-primary)] hover:bg-[var(--brand-off-white)]"
+                  className="w-full bg-white text-[var(--concept-primary)] hover:bg-[var(--brand-off-white)] sm:w-auto"
                 >
                   <Link href={bookingHref}>{brandCopy.primaryCta}</Link>
                 </Button>
@@ -39,7 +39,7 @@ export function CTASection() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-[var(--brand-silver-light)] text-white hover:bg-white hover:text-[var(--concept-primary)]"
+                  className="w-full border-[var(--brand-silver-light)] text-white hover:bg-white hover:text-[var(--concept-primary)] sm:w-auto"
                 >
                   <Link href="/contact">Contact Me</Link>
                 </Button>

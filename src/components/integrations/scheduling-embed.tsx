@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import Script from "next/script";
-import { Calendar, ExternalLink, Loader2 } from "lucide-react";
+import { Calendar, Check, ExternalLink, Loader2 } from "lucide-react";
 import {
   bookingConfig,
   getBookingProvider,
@@ -45,6 +45,10 @@ export function SchedulingEmbed({ className, url }: SchedulingEmbedProps) {
     return <SchedulingSetupFallback className={className} />;
   }
 
+  if (provider === "google") {
+    return <GoogleAppointmentCard bookingUrl={bookingUrl} className={className} />;
+  }
+
   if (provider === "calendly") {
     return (
       <div className={cn("overflow-hidden rounded-xl border border-[var(--brand-silver-light)] bg-white shadow-sm", className)}>
@@ -56,26 +60,115 @@ export function SchedulingEmbed({ className, url }: SchedulingEmbedProps) {
         {!scriptReady && <SchedulingLoading />}
         <div
           id={`calendly-embed-${widgetId}`}
-          className="calendly-inline-widget min-h-[700px] w-full"
+          className="calendly-inline-widget w-full min-h-[560px] sm:min-h-[700px]"
           data-url={getCalendlyEmbedUrl(bookingUrl)}
-          style={{ minWidth: "320px", height: "700px" }}
+          style={{ height: "560px" }}
         />
         <SchedulingFooter bookingUrl={bookingUrl} />
       </div>
     );
   }
 
-  // Cal.com and generic iframe embeds
   return (
     <div className={cn("overflow-hidden rounded-xl border border-[var(--brand-silver-light)] bg-white shadow-sm", className)}>
       <iframe
         src={bookingUrl}
         title={bookingConfig.eventName}
-        className="min-h-[700px] w-full border-0"
+        className="min-h-[560px] w-full max-w-full border-0 sm:min-h-[700px]"
         loading="lazy"
         allow="camera; microphone; fullscreen"
       />
       <SchedulingFooter bookingUrl={bookingUrl} />
+    </div>
+  );
+}
+
+const discoveryNotes = [
+  "Complimentary 30-minute conversation",
+  "Phone or video — your choice",
+  "Instant confirmation to your inbox",
+  "No payment and no obligation",
+];
+
+function GoogleAppointmentCard({
+  bookingUrl,
+  className,
+}: {
+  bookingUrl: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "mx-auto grid w-full max-w-4xl items-start gap-8 overflow-x-clip lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-14",
+        className
+      )}
+    >
+      <div className="lg:pt-2">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--concept-primary)]">
+          Schedule
+        </p>
+        <h2 className="mt-2 font-[family-name:var(--concept-font-heading)] text-2xl font-bold tracking-tight text-[var(--concept-foreground)] sm:text-3xl lg:text-4xl">
+          Pick a time that works
+        </h2>
+        <div className="silver-rule my-4 w-20" />
+        <p className="max-w-md text-base leading-relaxed text-[var(--concept-muted-foreground)]">
+          Choose a date on the calendar, then a time. Sarah will confirm by email.
+        </p>
+        <ul className="mt-8 space-y-3">
+          {discoveryNotes.map((note) => (
+            <li
+              key={note}
+              className="flex items-start gap-3 text-sm text-[var(--concept-muted-foreground)]"
+            >
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[var(--brand-silver-light)] bg-[var(--concept-primary)]/5">
+                <Check className="h-3 w-3 text-[var(--concept-primary)]" />
+              </span>
+              {note}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="relative mx-auto w-full max-w-[26rem] overflow-x-clip sm:pb-3 sm:pr-3">
+        <div
+          className="absolute -bottom-2 -right-2 left-4 top-6 hidden rounded-2xl bg-[var(--brand-navy)] sm:block"
+          aria-hidden="true"
+        />
+        <div className="relative overflow-hidden rounded-2xl bg-[var(--brand-off-white)] shadow-2xl ring-1 ring-[var(--brand-silver)]/50">
+          <div className="texture-navy px-5 py-4 text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--brand-silver-light)]">
+              Discovery Call
+            </p>
+            <p className="mt-1 font-[family-name:var(--concept-font-heading)] text-lg font-semibold text-white">
+              {bookingConfig.eventName}
+            </p>
+          </div>
+          <iframe
+            src={bookingUrl}
+            title={bookingConfig.eventName}
+            className="block w-full max-w-full bg-white"
+            style={{ height: "min(70dvh, 560px)", minHeight: "420px" }}
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allow="camera; microphone; fullscreen"
+          />
+          <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[var(--brand-silver-light)] bg-[var(--brand-off-white)] px-4 py-3">
+            <p className="text-[11px] leading-snug text-[var(--concept-muted-foreground)]">
+              Powered by Google Calendar
+            </p>
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-1 text-[11px] font-medium text-[var(--concept-primary)] hover:underline"
+            >
+              Open full page
+              <ExternalLink className="h-3 w-3" />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -108,7 +201,6 @@ function SchedulingFooter({ bookingUrl }: { bookingUrl: string }) {
   );
 }
 
-/** Shown only when NEXT_PUBLIC_BOOKING_URL is not set yet */
 function SchedulingSetupFallback({ className }: { className?: string }) {
   return (
     <div
@@ -124,12 +216,8 @@ function SchedulingSetupFallback({ className }: { className?: string }) {
         Scheduler almost ready
       </h3>
       <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-[var(--concept-muted-foreground)]">
-        Add your Calendly or Cal.com link as{" "}
-        <code className="rounded bg-[var(--brand-off-white-muted)] px-1.5 py-0.5 text-xs">
-          NEXT_PUBLIC_BOOKING_URL
-        </code>{" "}
-        in <code className="rounded bg-[var(--brand-off-white-muted)] px-1.5 py-0.5 text-xs">.env.local</code>, then
-        restart the server. Until then, you can still reach Sarah directly:
+        The Google Calendar scheduler is not configured. You can still reach Sarah
+        directly:
       </p>
       <div className="mt-6 flex flex-col items-center gap-2 text-sm">
         <a
@@ -147,18 +235,12 @@ function SchedulingSetupFallback({ className }: { className?: string }) {
       </div>
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <Button asChild>
-          <a
-            href="https://calendly.com/signup"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Create a Calendly account
+          <a href={`mailto:${siteConfig.email}?subject=Discovery%20Call%20Request`}>
+            Email Sarah
           </a>
         </Button>
         <Button asChild variant="outline">
-          <a href="https://cal.com/signup" target="_blank" rel="noopener noreferrer">
-            Or use Cal.com (free)
-          </a>
+          <a href={`tel:${siteConfig.phone.replace(/\./g, "")}`}>Call {siteConfig.phone}</a>
         </Button>
       </div>
     </div>

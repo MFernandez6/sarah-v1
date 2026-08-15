@@ -46,7 +46,7 @@ export function ServicesOverviewSection() {
         </StaggerContainer>
 
         <FadeIn className="mt-10 text-center">
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
             <Link href="/services">
               View All Services
               <ArrowRight className="ml-2 h-4 w-4" />

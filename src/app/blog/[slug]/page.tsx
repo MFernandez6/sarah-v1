@@ -40,7 +40,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <div className="relative overflow-hidden py-16 sm:py-20">
+      <div className="relative overflow-hidden py-12 sm:py-16 lg:py-20">
         <BlogCoverArt category={post.category} className="absolute inset-0" />
         <div className="absolute inset-0 bg-[var(--brand-navy)]/40" />
         <Container className="relative">
@@ -53,7 +53,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Back to Blog
             </Link>
             <Badge className="mt-6 bg-white/20 text-white">{post.category}</Badge>
-            <h1 className="mt-4 max-w-3xl font-[family-name:var(--concept-font-heading)] text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+            <h1 className="mt-4 max-w-3xl font-[family-name:var(--concept-font-heading)] text-2xl font-bold text-white sm:text-4xl lg:text-5xl">
               {post.title}
             </h1>
             <p className="mt-4 text-white/80">
@@ -76,7 +76,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               ))}
             </div>
 
-            <div className="mt-12 rounded-2xl border border-[var(--brand-silver-light)] bg-[var(--brand-off-white)] p-6 sm:p-8">
+            <div className="mt-12 rounded-2xl border border-[var(--brand-silver-light)] bg-[var(--brand-off-white)] p-5 sm:p-8">
               <h2 className="font-[family-name:var(--concept-font-heading)] text-xl font-bold text-[var(--concept-foreground)]">
                 Ready to put this into practice?
               </h2>
@@ -84,7 +84,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Book a free discovery call and we&apos;ll talk through how coaching can
                 help you apply these ideas to your life.
               </p>
-              <Button asChild className="mt-5">
+              <Button asChild className="mt-5 w-full sm:w-auto">
                 <Link href={bookingHref}>
                   {brandCopy.primaryCta}
                   <ArrowRight className="ml-2 h-4 w-4" />

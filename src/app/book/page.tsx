@@ -28,12 +28,6 @@ export default function BookPage() {
       <Section id="schedule">
         <Container>
           <FadeIn>
-            <SectionHeader
-              title="Pick a Time That Works for You"
-              description="Free 30-minute discovery call via phone or video. Instant confirmation to your inbox."
-            />
-          </FadeIn>
-          <FadeIn delay={0.1}>
             <SchedulingEmbed />
           </FadeIn>
         </Container>
@@ -62,7 +56,7 @@ export default function BookPage() {
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <StaggerContainer className="grid gap-8 pt-2 md:grid-cols-2 lg:grid-cols-4">
             {pricingPlans.map((plan) => {
               const isDiscovery = plan.price === "Free";
               const showBadge = Boolean(plan.badge || plan.highlighted);
